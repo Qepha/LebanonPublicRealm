@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lebanon Public Realm - Issues & Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f9f4; /* Calm greenish background */
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #4CAF50; /* Green header */
+      color: white;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    #issues .issue {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+      width: 80%;
+      background-color: #fff;
+    }
+
+    .comments textarea {
+      width: 100%;
+      height: 60px;
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .solutions .solution {
+      margin-top: 10px;
+      padding: 10px;
+      border-left: 3px solid #4CAF50;
+    }
+
+    .upvote {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #ads {
+      position: absolute;
+      top: 100px;
+      right: 20px;
+      width: 200px;
+    }
+
+    .ad-box {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 24px;
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lebanon Public Realm</h1>
+    <p>Addressing issues and finding solutions to improve Lebanon's public realm.</p>
+  </header>
+
+  <main>
+    <!-- Issue List -->
+    <section id="issues">
+      <h2>Current Issues</h2>
+      <div class="issue">
+        <h3>(1) Lack of Safe Footpath</h3>
+        <p><strong>Description:</strong> Many areas in Lebanon lack proper footpaths. Drivers park their vehicles on the footpath, making it unsafe for pedestrians to walk.</p>
+        <div class="comments">
+          <textarea placeholder="Add your comment or solution (up to 1000 characters)" maxlength="1000"></textarea>
+          <button onclick="addComment(this)">Submit</button>
+          <div class="solutions">
+            <!-- Example Solution -->
+            <div class="solution">
+              <p><strong>Solution:</strong> Install bollards along footpaths to prevent illegal parking.</p>
+              <button class="upvote" onclick="upvote(this)">👍 Upvote (0)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="issue">
+        <h3>(2) Lack of End-to-End Public Transport</h3>
+        <p><strong>Description:</strong> Public transportation systems in Lebanon are fragmented and do not provide seamless connectivity. The Coastal Train is out of service, and no Park and Ride spaces are available.</p>
+        <div class="comments">
+          <textarea placeholder="Add your comment or solution (up to 1000 characters)" maxlength="1000"></textarea>
+          <button onclick="addComment(this)">Submit</button>
+          <div class="solutions">
+            <!-- Example Solution -->
+            <div class="solution">
+              <p><strong>Solution:</strong> Revive the Coastal Train and introduce Park and Ride facilities.</p>
+              <button class="upvote" onclick="upvote(this)">👍 Upvote (0)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="issue">
+        <h3>(3) Lack of Law Enforcement for Driving</h3>
+        <p><strong>Description:</strong> Traffic laws are often not enforced, leading to reckless driving and unsafe road conditions.</p>
+        <div class="comments">
+          <textarea placeholder="Add your comment or solution (up to 1000 characters)" maxlength="1000"></textarea>
+          <button onclick="addComment(this)">Submit</button>
+          <div class="solutions">
+            <!-- Example Solution -->
+            <div class="solution">
+              <p><strong>Solution:</strong> Increase traffic police presence and enforce penalties for violations.</p>
+              <button class="upvote" onclick="upvote(this)">👍 Upvote (0)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="issue">
+        <h3>(4) Poor Street Lighting</h3>
+        <p><strong>Description:</strong> Inconsistent street lighting. Some pedestrian areas do not have street lighting or the street lighting is not connected to an alternative power source.</p>
+        <div class="comments">
+          <textarea placeholder="Add your comment or solution (up to 1000 characters)" maxlength="1000"></textarea>
+          <button onclick="addComment(this)">Submit</button>
+          <div class="solutions">
+            <!-- Example Solution -->
+            <div class="solution">
+              <p><strong>Solution:</strong> Install solar-powered streetlights in poorly lit areas.</p>
+              <button class="upvote" onclick="upvote(this)">👍 Upvote (0)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="issue">
+        <h3>(5) Inadequate Waste Management</h3>
+        <p><strong>Description:</strong> No allowance for recycled bins.</p>
+        <div class="comments">
+          <textarea placeholder="Add your comment or solution (up to 1000 characters)" maxlength="1000"></textarea>
+          <button onclick="addComment(this)">Submit</button>
+          <div class="solutions">
+            <!-- Example Solution -->
+            <div class="solution">
+              <p><strong>Solution:</strong> Introduce recycling bins in public areas and educate citizens on waste segregation.</p>
+              <button class="upvote" onclick="upvote(this)">👍 Upvote (0)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="issue">
+        <h3>(6) Limited Green Spaces and Recreational Areas</h3>
+        <p><strong>Description:</strong> Developers are given permission to build every square foot of the cities, not enforcing the quota for green spaces.</p>
+        <div class="comments">
+          <textarea placeholder="Add your comment or solution (up to 1000 characters)" maxlength="1000"></textarea>
+          <button onclick="addComment(this)">Submit</button>
+          <div class="solutions">
+            <!-- Example Solution -->
+            <div class="solution">
+              <p><strong>Solution:</strong> Enforce zoning laws to allocate space for parks and recreational areas.</p>
+              <button class="upvote" onclick="upvote(this)">👍 Upvote (0)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="issue">
+        <h3>(7) Air and Noise Pollution in Urban Areas</h3>
+        <p><strong>Description:</strong> Drivers bump the horn at any time to voice their frustration of heavy traffic or if someone is using their phones and delay the flow of traffic.</p>
+        <div class="comments">
+          <textarea placeholder="Add your comment or solution (up to 1000 characters)" maxlength="1000"></textarea>
+          <button onclick="addComment(this)">Submit</button>
+          <div class="solutions">
+            <!-- Example Solution -->
+            <div class="solution">
+              <p><strong>Solution:</strong> Implement strict noise pollution laws and promote electric vehicles.</p>
+              <button class="upvote" onclick="upvote(this)">👍 Upvote (0)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Issue Submission -->
+      <div id="new-issue">
+        <h3>Add a New Issue</h3>
+        <textarea placeholder="Describe the new issue (awaiting admin approval)" maxlength="1000"></textarea>
+        <button onclick="submitNewIssue()">Submit for Approval</button>
+      </div>
+    </section>
+
+    <!-- Quarterly Report Section -->
+    <section id="quarterly-report">
+      <h2>Quarterly Reports</h2>
+      <a href="report-q1.pdf" download>Download Q1 Report</a>
+      <a href="report-q2.pdf" download>Download Q2 Report</a>
+      <!-- Add more reports as needed -->
+    </section>
+
+    <!-- Advertisement Spaces -->
+    <aside id="ads">
+      <div class="ad-box">
+        <p>Advertisement Space</p>
+      </div>
+      <div class="ad-box">
+        <p>Advertisement Space</p>
+      </div>
+      <div class="ad-box">
+        <p>Advertisement Space</p>
+      </div>
+    </aside>
+
+    <!-- Social Media Sharing -->
+    <footer>
+      <h3>Share This Page</h3>
+      <div class="social-icons">
+        <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.signal.org" target="_blank"><i class="fas fa-comment-alt"></i></a>
+        <a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <!-- Add more social media icons -->
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    function addComment(button) {
+      const textarea = button.previousElementSibling;
+      const solutionText = textarea.value.trim();
+      if (!solutionText) return;
+
+      const solutionsContainer = button.nextElementSibling;
+      const newSolution = document.createElement("div");
+      newSolution.classList.add("solution");
+
+      newSolution.innerHTML = `
+        <p><strong>Solution:</strong> ${solutionText}</p>
+        <button class="upvote" onclick="upvote(this)">👍 Upvote (0)</button>
+      `;
+
+      solutionsContainer.appendChild(newSolution);
+      textarea.value = "";
+    }
+
+    function upvote(button) {
+      const countText = button.textContent.match(/\d+/)[0];
+      let count = parseInt(countText, 10);
+      count++;
+      button.textContent = `👍 Upvote (${count})`;
+    }
+
+    function submitNewIssue() {
+      alert("Your issue has been submitted for admin approval.");
+    }
+  </script>
+</body>
+</html>
